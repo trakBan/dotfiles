@@ -15,9 +15,6 @@ alias bp="bpytop"
 alias c="clear"
 alias neo="neofetch"
 
-# Games
-alias factorio="sh ~/torrent/Factorio.1.1.38.b58907/start.sh"
-
 # Gentoo update script
 alias update='cd ~/; echo "sudo emaint -a sync;sudo emerge --verbose --update --deep --newuse @world;sudo emerge --verbose --depclean" >> updatesh.sh; sudo su'
 # Because of sudo su you need to execute : sh updatesh.sh
