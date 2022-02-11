@@ -14,6 +14,7 @@ alias makeconf="sudo vim /etc/portage/make.conf"
 alias bp="bpytop"
 alias c="clear"
 alias neo="neofetch"
+alias random="dd if=/dev/urandom count=1 bs=3 > /dev/null 2>&1 | sha512sum"
 
 # Gentoo update script
 alias update='cd ~/; echo "sudo emaint -a sync;sudo emerge --verbose --update --deep --newuse @world;sudo emerge --verbose --depclean" >> updatesh.sh; sudo su'
