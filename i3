@@ -20,7 +20,10 @@ client.background       #ffffff
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 1
+font pango:monospace 3
+
+# Border edge
+for_window [class="^.*"] border pixel 3
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -29,9 +32,10 @@ font pango:monospace 1
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
-exec --no-startup-id xrandr -s 1920x1080
-exec --no-startup-id hsetroot -cover ~/Downloads/andre-benz-JnB8Gio4GZo-unsplash.jpg 
-exec --no-startup-id polybar
+exec --no-startup-id polybar trak
+exec --no-startup-id xrandr --output HDMI-A-0 --primary --mode 1920x1080 --rate 143.98 --output HDMI-A-1 --mode 1920x1080 --rate 143.98 --right-of HDMI-A-0
+exec --no-startup-id hsetroot -cover ~/github/dotfiles/wallpaper.jpg 
+exec --no-startup-id xinput --set-prop 8 'libinput Accel Speed' -0.5; xinput --list-props 8
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -161,6 +165,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+p exec xfce4-screenshooter
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
